@@ -26,4 +26,12 @@ public abstract class Animals {
     public abstract void showAbilities();
 
     public  abstract void addCommand(String command);
+
+    @Override
+    public String toString() {
+        return "Animals{" +
+                "name='" + name + '\'' +
+                ", abilities='" + abilities + '\'' +
+                '}';
+    }
 }
