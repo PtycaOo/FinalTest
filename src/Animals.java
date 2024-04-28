@@ -1,10 +1,10 @@
 public abstract class Animals {
     private String name;
-    private String perk;
+    private String abilities;
 
-    public Animals(String name, String perk){
+    public Animals(String name, String abilities){
         this.name = name;
-        this.perk = perk;
+        this.abilities = abilities;
     }
 
     public String getName() {
@@ -15,11 +15,15 @@ public abstract class Animals {
         this.name = name;
     }
 
-    public String getPerk() {
-        return perk;
+    public String getAbilities() {
+        return abilities;
     }
 
-    public void setPerk(String perk) {
-        this.perk = perk;
+    public void setAbilities(String abilities) {
+        this.abilities = abilities;
     }
+
+    public abstract void showAbilities();
+
+    public  abstract void addCommand(String command);
 }

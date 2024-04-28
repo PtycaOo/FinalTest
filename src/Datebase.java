@@ -12,4 +12,10 @@ public class Datebase {
         animals.add(pet);
     }
 
+    @Override
+    public String toString() {
+        return "Datebase{" +
+                "animals=" + animals +
+                '}';
+    }
 }
