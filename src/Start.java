@@ -18,12 +18,22 @@ public class Start {
                 System.out.println("2. Добавит способность животному");
                 System.out.println("3. Вывести список команд животного");
                 System.out.println("4. Вывести список животных");
+                System.out.println("5. Сохранить и выйти");
+                System.out.print("Терминал ждет команду: ");
                 int choise = scanner.nextInt();
 
                 switch (choise){
                     case 1: addAnimals();
-                    break;
+                        break;
                     case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        datebase.saveDatabase();
+                        return;
                 }
 
 
@@ -42,7 +52,7 @@ public class Start {
         String abilities = scanner.next();
         System.out.println("Введите дату рождения животного в формате дд.мм.гггг");
         String age = scanner.next();
-        System.out.println("Выберете класс животного:\n" + "1. Собака\n" + "2. Кошка\n" + "3. Хомяк\n");
+        System.out.print("Выберете класс животного:\n" + "1. Собака\n" + "2. Кошка\n" + "3. Хомяк\n" + "Выберите класс животного: ");
         int type = scanner.nextInt();
         scanner.nextLine();
 
