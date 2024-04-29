@@ -38,5 +38,4 @@ public abstract class Animals {
     public abstract void showAbilities();
 
     public  abstract void addCommand(String command);
-
 }

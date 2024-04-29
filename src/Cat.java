@@ -5,7 +5,7 @@ public class Cat extends Animals {
 
     @Override
     public void showAbilities() {
-        System.out.println("Команды кошки: " + getAbilities());
+        System.out.println("Команды кошки " + getName() +":" + getAbilities());
     }
 
     @Override

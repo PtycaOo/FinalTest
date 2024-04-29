@@ -27,9 +27,9 @@ public class Start {
                         break;
                     case 2: teachNewAbilities();
                         break;
-                    case 3:
+                    case 3: showAnimalAbilities();
                         break;
-                    case 4: datebase.displayAllAnimals();
+                    case 4: datebase.showAllAnimals();
                         break;
                     case 5:
                         return;
@@ -73,6 +73,7 @@ public class Start {
     }
 
     private void teachNewAbilities(){
+        datebase.showAllAnimals();
         System.out.println("Введите имя искомого животного");
         String name = scanner.next();
         System.out.println("Чему научить животное?");
@@ -83,9 +84,18 @@ public class Start {
         System.out.println("Навык добавлен");
         System.out.println();
         System.out.println("Нажмите Enter для продолжения");
-        String wait = scanner.next();
+        String wait = scanner.nextLine();
         if(wait.equals(null)){
             return;
         }
     }
+
+    private void showAnimalAbilities(){
+        System.out.println();
+        System.out.println("ВВедите имя животного");
+        String name = scanner.next();
+
+        datebase.showAbilities(name);
+    }
+
 }

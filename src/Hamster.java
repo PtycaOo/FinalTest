@@ -5,7 +5,7 @@ public class Hamster extends Animals {
 
     @Override
     public void showAbilities() {
-        System.out.println("Команды хомяка: " + getAbilities());
+        System.out.println("Команды хомяка "+ getName() +":" + getAbilities());
     }
 
     @Override

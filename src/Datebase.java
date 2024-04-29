@@ -75,7 +75,7 @@ public class Datebase implements Iterable<Animals>{
         }
     }
 
-    public void displayAllAnimals() {
+    public void showAllAnimals() {
         int id = 1;
             try {
                 FileReader file = new FileReader(filePath);
@@ -90,6 +90,7 @@ public class Datebase implements Iterable<Animals>{
                 fileScanner.close();
             } catch (FileNotFoundException e) {
                 System.out.println("Файл не найден.");
+                return;
             }
         System.out.println("Нажмите Enter для продолжения: ");
             String x = sc.nextLine();
@@ -101,10 +102,19 @@ public class Datebase implements Iterable<Animals>{
     public void newAbilities(String name, String abilities){
         for(Animals animals : animals){
             if(animals.getName().equals(name)){
-                String s = animals.getAbilities() +","+ abilities;
-                animals.setAbilities(s);
+                animals.addCommand(abilities);
             }
         }
+    }
+
+    public void showAbilities(String name){
+        for(Animals animal: animals){
+            if(animal.getName().equals(name)){
+                animal.showAbilities();
+                return;
+            }
+        }
+        System.out.println("Такого животно нет");
     }
 
 
