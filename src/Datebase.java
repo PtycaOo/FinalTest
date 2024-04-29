@@ -76,19 +76,37 @@ public class Datebase implements Iterable<Animals>{
     }
 
     public void displayAllAnimals() {
-        try {
-            File file = new File(filePath);
-            Scanner fileScanner = new Scanner(file);
+        int id = 1;
+            try {
+                FileReader file = new FileReader(filePath);
+                Scanner fileScanner = new Scanner(file);
 
-            while (fileScanner.hasNextLine()) {
-                String animalData = fileScanner.nextLine();
-                System.out.println(animalData);
+                while (fileScanner.hasNextLine()) {
+                    String animalData = fileScanner.nextLine();
+                    System.out.println(id++ + " " + animalData);
+                    System.out.println();
+                }
+
+                fileScanner.close();
+            } catch (FileNotFoundException e) {
+                System.out.println("Файл не найден.");
             }
+        System.out.println("Нажмите Enter для продолжения: ");
+            String x = sc.nextLine();
+            if(x.equals(null)){
+                return;
+            }
+    }
 
-            fileScanner.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Файл не найден.");
+    public void newAbilities(String name, String abilities){
+        for(Animals animals : animals){
+            if(animals.getName().equals(name)){
+                String s = animals.getAbilities() +","+ abilities;
+                animals.setAbilities(s);
+            }
         }
     }
+
+
 
 }
